@@ -5,4 +5,6 @@ WORKDIR /var/www/html
 COPY . /var/www/html/
 EXPOSE 5150
 
-CMD [ "npm i", "node server.js" ]
+RUN "npm i"
+
+CMD [ "node", "server.js" ]
