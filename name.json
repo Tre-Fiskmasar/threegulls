@@ -1,8 +1,0 @@
-{
-    "Name": "Firstname Lastname",
-    "Description": "A brief description",
-    "Contacts": {
-        "Email": "test@example.com",
-        "Number": "+1234567890"
-    }
-}
