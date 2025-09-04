@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         document.getElementById("footer").innerText = siteData.Footer;
 
-        const peopleFiles = ["Victor.json", "name.json"];
+        const peopleFiles = ["Victor.json", "Leon.json"];
 
         for (const file of peopleFiles) {
             const person = await fetch(`/public/data/${file}`).then(res => res.json());
