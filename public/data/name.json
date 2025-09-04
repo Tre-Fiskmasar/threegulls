@@ -1,8 +1,10 @@
 {
     "Name": "Firstname Lastname",
+    "image": "name.jpg",
     "Description": "A brief description",
+    "qualifications": "Your Qualification",
     "Contacts": {
-        "Email": "test@example.com",
+        "Email": "name@trefiskmasar.com",
         "Number": "+1234567890"
     }
 }
