@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         const siteData = await fetch("/public/data/Site.json").then(res => res.json());
         
-        // Populate Header
         document.getElementById("team-title").innerText = siteData.Title;
         document.getElementById("logo").src = `/public/img/${siteData.logo}`;
         document.getElementById("logo").alt = `${siteData.Title} Logo`;
