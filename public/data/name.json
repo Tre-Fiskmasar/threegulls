@@ -1,6 +1,8 @@
 {
     "Name": "Firstname Lastname",
+    "image": "name.jpg",
     "Description": "A brief description",
+    "qualifications": "Your Qualification",
     "Contacts": {
         "Email": "name@trefiskmasar.com",
         "Number": "+1234567890"
