@@ -1,0 +1,26 @@
+body { 
+    background-color: #f4f4f9; padding-top: 70px;
+}
+.admin-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.admin-container h1 { color: var(--primary-color); margin-bottom: 2rem; }
+.logout-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #d9534f;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.logout-button:hover { 
+    background-color: #c9302c; 
+}

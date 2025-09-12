@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #0077b6;
+    --secondary-color: #00b4d8;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-top: 70px;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -- Top Bar Styles -- */
+.top-bar {
+    background: var(--card-background);
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.75rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    height: 70px;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#logo { max-width: 50px; margin-right: 1rem; height: auto; }
+#team-title { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin: 0; }
+
+.main-nav {
+    margin-left: 10rem;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows the nav to fill available space */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 1.5rem;
+    width: 100%; /* Ensure the list takes full width of the nav */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* --- NEW: Admin Link Specific Styles --- */
+.nav-admin-link {
+    margin-left: auto; /* This is the magic that pushes it to the right */
+}
+
+.nav-admin-link a {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0.4rem 0.9rem;
+}
+
+.nav-admin-link a:hover {
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+}
+
+/* Remove the underline effect for the admin link */
+.nav-admin-link a::after {
+    display: none;
+}
+
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.hamburger { display: block; width: 25px; height: 3px; background: var(--primary-color); position: relative; transition: transform 0.3s ease; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 3px; background: var(--primary-color); left: 0; transition: transform 0.3s ease, top 0.3s ease; }
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+
+/* --- Content Styles --- */
+h2 { font-size: 1.5rem; font-weight: 600; color: var(--primary-color); }
+#team-selling { font-size: 1.1rem; max-width: 800px; margin: 1rem auto 0; line-height: 1.8; color: #555; }
+
+#about-team {
+    text-align: center;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+#team-description { font-size: 1rem; max-width: 750px; margin: 0 auto 1.5rem auto; color: #555; }
+#team-finnish { font-size: 1.2rem; font-weight: 600; font-style: italic; color: var(--primary-color); }
+#people.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 2rem 0; }
+
+.person-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.person-card:hover { transform: translateY(-8px); box-shadow: 0 8px 24px var(--shadow-color); }
+.person-card img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 4px solid var(--primary-color); }
+.person-card p { margin-bottom: 1rem; }
+.person-card a { color: var(--secondary-color); text-decoration: none; transition: color 0.3s ease; }
+.person-card a:hover { color: var(--primary-color); text-decoration: underline; }
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+/* --- Find Us Section --- */
+.find-us-section { padding: 3rem 0; text-align: center; background-color: var(--background-color); }
+.find-us-section h2 { margin-bottom: 2rem; font-size: 2.2rem; color: #333; }
+.map-container { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px var(--shadow-color); margin: 0 auto 2.5rem auto; max-width: 900px; border: 1px solid #e9ecef; }
+.map { display: block; width: 100%; height: 450px; border: none; }
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #005f8a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 119, 182, 0.4);
+}
+
+/* -- Responsive Styles -- */
+@media (max-width: 768px) {
+    .main-nav { display: none; }
+    .nav-toggle { display: block; }
+    
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--card-background);
+        box-shadow: 0 4px 12px var(--shadow-color);
+        text-align: center;
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active { display: flex; transform: translateY(0); }
+    .nav-links li { padding: 1rem 0; }
+    /* On mobile, remove the margin to let it stack normally */
+    .nav-admin-link { margin-left: 0; }
+
+    .nav-toggle.active .hamburger { transform: rotate(45deg); }
+    .nav-toggle.active .hamburger::before { top: 0; transform: rotate(90deg); }
+    .nav-toggle.active .hamburger::after { display: none; }
+}
