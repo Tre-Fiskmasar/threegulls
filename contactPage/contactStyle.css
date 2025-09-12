@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #0077b6;
+    --hover-color: #2ba4e6;
+    --text-color: #333;
+    --labelText-size: 16px;
+    --shadow-intensity: 30px;
+    --background-color: #f8f9fa;
+    --form-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.12);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--form-background);
+    width: clamp(12rem, 42vw, 24rem);
+    height: clamp(12px, 72rem, 24rem);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 var(--shadow-intensity) var(--shadow-color);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.wrapper:hover {
+    box-shadow: 0 0 calc(var(--shadow-intensity) + 10px) rgba(0, 0, 0, 0.4);
+}
+
+.wrapper label {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--labelText-size);
+}
+
+.wrapper input, textarea {
+    border-radius: 6px;
+    border: 1px solid gray;
+    text-indent: 4px;
+    color: var(--text-color);
+}
+
+.wrapper input {
+    height: 3.4rem;
+}
+
+.wrapper textarea {
+    resize: none;
+    line-height: 1.6;
+}
+
+.wrapper button {
+    padding: 0.6rem 0;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    font-weight: bolder;
+}
+
+.wrapper button:hover {
+    background-color: var(--hover-color);
+}
+
