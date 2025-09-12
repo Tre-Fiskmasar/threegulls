@@ -1,0 +1,10 @@
+{
+    "Name": "Jack Minayerdji",
+    "image": "Jack.png",
+    "Description": "A passionate fullstack developer, always ready to learn!",
+    "qualifications": "PHP, PostgresSQL, MongoDB, AWS, Javascript, Tailwind, Sass",
+    "Contacts": {
+        "Email": "Jack@trefiskmasar.com",
+        "Number": "+1234567890"
+    }
+}
