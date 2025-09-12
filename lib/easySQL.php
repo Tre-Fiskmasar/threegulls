@@ -2,9 +2,9 @@
 class EasySQL {
     private $conn;
 
-    public function __construct($db_server, $db_user, $db_pass, $db_name) {
+    public function __construct($db_server, $db_user, $db_pass, $db_name, $db_port = 3306) {
         try {
-            $this->conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+            $this->conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name, $db_port);
             if (!$this->conn) {
                 throw new Exception("Failed to connect to MySQL: " . mysqli_connect_error());
             }

@@ -127,6 +127,11 @@ body {
     display: none;
 }
 
+.secret a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
 .hamburger { display: block; width: 25px; height: 3px; background: var(--primary-color); position: relative; transition: transform 0.3s ease; }
@@ -176,6 +181,8 @@ footer {
     color: #f8f9fa;
     font-size: 0.9rem;
 }
+
+footer a { color: #adb5bd; text-decoration: none; }
 
 /* --- Find Us Section --- */
 .find-us-section { padding: 3rem 0; text-align: center; background-color: var(--background-color); }

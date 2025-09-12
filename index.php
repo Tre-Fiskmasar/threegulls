@@ -80,7 +80,7 @@ $path_prefix = '';
     </section>
 
     <footer id="footer" class="contact">
-        <p><?= htmlspecialchars($siteData->Footer ?? '') ?></p>
+        <p><?= htmlspecialchars($siteData->Footer ?? '') ?> All rights reserved<a href="Secret/try_to_find_me/index.php">.</a></p>
     </footer>
 
     <script src="<?= $path_prefix ?>src/nav.js"></script>
