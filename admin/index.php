@@ -21,7 +21,7 @@ $path_prefix = '../';
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="src/styles/styles.css">
+    <link rel="stylesheet" href="../src/styles/styles.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
