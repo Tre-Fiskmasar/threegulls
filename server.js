@@ -7,10 +7,10 @@ const PORT = 5150;
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname,)));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
