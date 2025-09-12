@@ -9,7 +9,7 @@
                 <li><a href="<?= $path_prefix ?>index.php#about-team">About</a></li>
                 <li><a href="<?= $path_prefix ?>index.php#people">Team</a></li>
                 <li><a href="<?= $path_prefix ?>index.php#find-us">Find Us</a></li>
-                <li><a href="<?= $path_prefix ?>index.php#footer">Contact</a></li>
+                <li><a href="<?= $path_prefix ?>contact/index.php">Contact</a></li>
                 <li class="nav-admin-link"><a href="<?= $path_prefix ?>admin/index.php">Admin page</a></li>
             </ul>
         </nav>

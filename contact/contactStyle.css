@@ -1,0 +1,122 @@
+/* --- CONTACT PAGE SPECIFIC STYLES --- */
+
+/* Use main variables from the global style.css file */
+:root {
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --input-focus-glow: rgba(0, 119, 182, 0.25);
+}
+
+.contact-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: var(--card-background);
+    width: 100%;
+    max-width: 550px; /* Control the max width */
+    height: auto; /* Let content define the height */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wrapper label {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: -0.5rem; /* Bring label closer to its input */
+}
+
+.wrapper input, 
+.wrapper textarea {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrapper input:focus, 
+.wrapper textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--input-focus-glow);
+}
+
+.wrapper textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    line-height: 1.6;
+    min-height: 120px;
+}
+
+.wrapper button {
+    padding: 0.9rem 0;
+    margin-top: 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.wrapper button:hover {
+    background-color: #005f8a; /* Darker shade */
+    transform: scale(1.02);
+}
+
+/* --- STATUS MESSAGE STYLES --- */
+.status-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.status-message.success {
+    background-color: #e9f7ec;
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.status-message.error {
+    background-color: #fdecea;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}

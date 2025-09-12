@@ -1,0 +1,1 @@
+CREATE DATABASE trefiskmasar_db;
