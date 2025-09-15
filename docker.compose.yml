@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+
+  database: 
+    build: 
+      dockerfile: database.DockerFile
+      context: .
+    environment:
+      MYSQL_DB: trefiskmasar_db 
+      MYSQL_ROOT_PASSWORD: Fiskarna78$
+      MYSQL_ROOT_USER: root
+    volumes:
+      - db_backup:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  server: 
+    build: 
+      dockerfile: serverHost.DockerFile
+      context: .
+    volumes: 
+      - ./www-root:/var/www/html
+    depends_on:
+      - database
+    ports:
+      - "5150:80"
+
+  nodejs: 
+    build: 
+      dockerfile: node.DockerFile
+      context: .
+
+volumes:
+  db_backup
