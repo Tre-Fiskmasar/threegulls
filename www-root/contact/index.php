@@ -1,8 +1,8 @@
 <?php
 session_start(); 
 
-require_once __DIR__ . '/config/database.php';
-require_once __DIR__ . '/lib/easySQL.php';
+require_once '../contactconfig/database.php';
+require_once '../contactlib/easySQL.php';
 
 
 $path_prefix = ''; 
@@ -57,12 +57,12 @@ function getJsonData($filePath) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - <?= htmlspecialchars($siteData->Title ?? '') ?></title>
-    <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/style.css">
-    <link rel="stylesheet" href="src/styles/contactStyle.css">
+    <link rel="stylesheet" href="<?= $path_prefix ?>../src/styles/styles.css">
+    <link rel="stylesheet" href="contactStyle.css">
 </head>
 <body>
     <?php 
-        include __DIR__ . '/navbar/index.php'; 
+        include '../navbar/index.php'; 
     ?>
 
     <main class="contact-main">
@@ -72,7 +72,7 @@ function getJsonData($filePath) {
             
             <?= $message ?>
 
-            <form id="form" action="contact.php" method="post">
+            <form id="form" action="index.php" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your Full Name" maxlength="100" required>
 

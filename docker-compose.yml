@@ -26,10 +26,5 @@ services:
     ports:
       - "5150:80"
 
-  nodejs: 
-    build: 
-      dockerfile: node.DockerFile
-      context: .
-
 volumes:
-  db_backup
+  db_backup: {}
