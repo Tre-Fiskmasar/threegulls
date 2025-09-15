@@ -1,12 +1,24 @@
 <?php
-session_start(); 
+session_start();
 
+<<<<<<< HEAD:www-root/contact/index.php
 require_once '../contactconfig/database.php';
 require_once '../contactlib/easySQL.php';
+=======
+require_once __DIR__ . '/../config/database.php'; 
+require_once __DIR__ . '/../lib/easySQL.php'; 
+>>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
 
+$path_prefix = '../';
+$message = '';
 
-$path_prefix = ''; 
-$message = ''; 
+function getJsonData($filePath) {
+    if (!file_exists($filePath)) return null;
+    $json = file_get_contents($filePath);
+    return json_decode($json);
+}
+
+$siteData = getJsonData(__DIR__ . '/../public/data/Site.json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name'] ?? '');
@@ -24,31 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         try {
-            $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-            
-            $dataToInsert = [
-                'name' => $name,
-                'email' => $email,
-                'message' => $user_message
-            ];
-            
+            $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, db_PORT);
+            $dataToInsert = ['name' => $name, 'email' => $email, 'message' => $user_message];
             $db->db_Ins('contacts', $dataToInsert);
             $db->closeConnection();
-
             $message = '<div class="status-message success">Thank you! Your message has been sent successfully.</div>';
-
         } catch (Exception $e) {
             $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
         }
     }
-}
-
-$siteData = getJsonData(__DIR__ . '/public/data/Site.json');
-
-function getJsonData($filePath) {
-    if (!file_exists($filePath)) return null;
-    $json = file_get_contents($filePath);
-    return json_decode($json);
 }
 ?>
 <!DOCTYPE html>
@@ -57,12 +53,20 @@ function getJsonData($filePath) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - <?= htmlspecialchars($siteData->Title ?? '') ?></title>
+<<<<<<< HEAD:www-root/contact/index.php
     <link rel="stylesheet" href="<?= $path_prefix ?>../src/styles/styles.css">
+=======
+    <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
+>>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
     <link rel="stylesheet" href="contactStyle.css">
 </head>
 <body>
     <?php 
+<<<<<<< HEAD:www-root/contact/index.php
         include '../navbar/index.php'; 
+=======
+        include __DIR__ . '/../navbar/index.php'; 
+>>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
     ?>
 
     <main class="contact-main">
@@ -87,6 +91,7 @@ function getJsonData($filePath) {
         </div>
     </main>
 
+    <!-- Use the prefix to find the nav script -->
     <script src="<?= $path_prefix ?>src/nav.js"></script>
 </body>
 </html>
