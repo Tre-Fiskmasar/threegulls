@@ -6,8 +6,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../lib/easySQL.php';
+require_once __DIR__ . '/../contactconfig/database.php';
+require_once __DIR__ . '/../contactlib/easySQL.php';
 
 function getJsonData($filePath) {
     if (!file_exists($filePath)) return null;

@@ -1,13 +1,8 @@
 <?php
 session_start();
 
-<<<<<<< HEAD:www-root/contact/index.php
-require_once '../contactconfig/database.php';
-require_once '../contactlib/easySQL.php';
-=======
-require_once __DIR__ . '/../config/database.php'; 
-require_once __DIR__ . '/../lib/easySQL.php'; 
->>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
+require_once __DIR__ . '/../contactconfig/database.php'; 
+require_once __DIR__ . '/../contactlib/easySQL.php'; 
 
 $path_prefix = '../';
 $message = '';
@@ -53,20 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - <?= htmlspecialchars($siteData->Title ?? '') ?></title>
-<<<<<<< HEAD:www-root/contact/index.php
-    <link rel="stylesheet" href="<?= $path_prefix ?>../src/styles/styles.css">
-=======
     <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
->>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
     <link rel="stylesheet" href="contactStyle.css">
 </head>
 <body>
     <?php 
-<<<<<<< HEAD:www-root/contact/index.php
-        include '../navbar/index.php'; 
-=======
         include __DIR__ . '/../navbar/index.php'; 
->>>>>>> b7366b9d53196675e25dbe94015d3e208a5a95b8:contact/index.php
     ?>
 
     <main class="contact-main">
