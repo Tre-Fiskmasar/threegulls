@@ -21,7 +21,7 @@ $path_prefix = '../';
 
 $messages = [];
 try {
-    $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, db_PORT);
+    $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
     $messages = $db->db_Out('contacts', '*', null, [], 'submission_date DESC');
     $db->closeConnection();
 } catch (Exception $e) {

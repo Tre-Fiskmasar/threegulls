@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($isValid) {
         try {
-            $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, db_PORT);
+            $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
             $dataToInsert = ['name' => $name, 'email' => $email, 'message' => $user_message];
             $db->db_Ins('contacts', $dataToInsert);
             $db->closeConnection();
@@ -40,6 +40,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
         }
     }
+    if ($isValid) {
+    try {
+        $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+        $dataToInsert = [
+            'name'    => $name,
+            'email'   => $email,
+            'message' => $user_message
+        ];
+        $db->db_Ins('contacts', $dataToInsert);
+        $db->closeConnection();
+        $message = '<div class="status-message success">Thank you! Your message has been sent successfully.</div>';
+    } catch (Exception $e) {
+        $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
+    }
+}
 }
 ?>
 <!DOCTYPE html>

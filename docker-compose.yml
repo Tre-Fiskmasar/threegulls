@@ -1,8 +1,8 @@
 version: "3.8"
 
-
 services:
-  database: 
+  database:
+    hostname: fisk_db 
     build: 
       dockerfile: database.DockerFile
       context: .
@@ -12,19 +12,18 @@ services:
       MYSQL_ROOT_USER: root
     volumes:
       - db_backup:/var/lib/mysql
-    ports:
-      - "3306:3306"
 
   server: 
     build: 
       dockerfile: serverHost.DockerFile
       context: .
+    user: SigmaServerUser
     volumes: 
       - ./www-root:/var/www/html
     depends_on:
-      - database
+      - database 
     ports:
-      - "5150:80" 
+      - "5150:80"
 
 volumes:
   db_backup: {}
