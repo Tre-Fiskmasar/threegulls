@@ -17,7 +17,6 @@ services:
     build: 
       dockerfile: serverHost.DockerFile
       context: .
-    user: SigmaServerUser
     volumes: 
       - ./www-root:/var/www/html
     depends_on:
