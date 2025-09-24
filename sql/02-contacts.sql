@@ -1,6 +1,7 @@
--- Active: 1757682690008@@127.0.0.1@3307@trefiskmasar_db
+CREATE DATABASE IF NOT EXISTS trefiskmasar_db;
 USE trefiskmasar_db;
-CREATE TABLE contacts (
+
+CREATE TABLE IF NOT EXISTS contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,

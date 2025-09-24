@@ -1,27 +1,33 @@
+
 services:
   database:
-    hostname: fisk_db 
-    build: 
+    build:
       dockerfile: database.DockerFile
       context: .
     environment:
-      MYSQL_DB: trefiskmasar_db
+      MYSQL_DATABASE: trefiskmasar_db
       MYSQL_ROOT_PASSWORD: Fiskarna78$
-      MYSQL_ROOT_USER: root
     volumes:
       - db_backup:/var/lib/mysql
+    networks:
+      - app-network
 
-  server: 
-    build: 
+  server:
+    build:
       dockerfile: serverHost.DockerFile
       context: .
-    volumes: 
+    volumes:
       - ./www-root:/var/www/html
     depends_on:
-      - database 
+      - database
     ports:
       - "5150:80"
+    networks:
+      - app-network
 
 volumes:
   db_backup: {}
 
+networks:
+  app-network:
+    driver: bridge

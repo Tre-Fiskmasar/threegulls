@@ -1,4 +1,3 @@
-
 :root {
     --admin-bg: #f4f4f9;
     --card-bg: #ffffff;
@@ -13,17 +12,12 @@ body {
 
 .admin-container {
     max-width: 900px;
-    margin: 2rem auto; 
+    margin: 2rem auto;
     padding: 2.5rem;
     background: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 15px var(--shadow-color);
     text-align: center;
-}
-
-.admin-container h1 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
 }
 
 .logout-button {
@@ -42,18 +36,58 @@ body {
     background-color: #c9302c;
 }
 
-.messages-container {
+.admin-section {
     max-width: 900px;
     margin: 2rem auto;
-    padding: 0;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
-.messages-container h2 {
+.admin-section h2 {
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.user-table th, .user-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-table th {
+    background-color: var(--header-bg);
+    font-weight: 600;
+}
+
+.btn-approve, .btn-deny {
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.btn-approve { background-color: #5cb85c; }
+.btn-approve:hover { background-color: #4cae4c; }
+.btn-deny { background-color: #d9534f; }
+.btn-deny:hover { background-color: #c9302c; }
+
+/* Styles for Messages/Inbox */
 .message-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -75,13 +109,14 @@ body {
     align-items: center;
     font-weight: 600;
     background-color: var(--header-bg);
-    border-radius: 8px 8px 0 0; 
-    outline: none; 
+    border-radius: 8px 8px 0 0;
+    outline: none;
     position: relative;
 }
 
-.message-header::-webkit-details-marker { display: none; }
-.message-header::marker { display: none; }
+.message-header::-webkit-details-marker, .message-header::marker {
+    display: none;
+}
 
 .message-header::after {
     content: '▼';
@@ -115,10 +150,46 @@ details[open] .message-header::after {
     color: var(--primary-color);
 }
 
-.no-messages {
+.no-items {
     text-align: center;
     padding: 2rem;
     color: #6c757d;
     background: var(--header-bg);
     border-radius: 8px;
+}
+
+.api-key-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.api-key-form select {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.api-key-form .form-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.api-key-form .form-button:hover {
+    background-color: #005f8a;
+}
+
+.api-key-code {
+    background-color: #e9ecef;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+    word-break: break-all;
 }

@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #007bff;
+    --page-bg: #f4f4f9;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --text-color: #333;
+    --code-bg: #e9ecef;
+    --pre-bg: #2d2d2d;
+    --pre-text: #f8f8f2;
+    --note-bg: #fffbe6;
+    --note-border: #ffc107;
+}
+
+body {
+    background-color: var(--page-bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Main Documentation Container */
+.doc-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Headings Hierarchy */
+.doc-container h1 {
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.doc-container h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.doc-container h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: none; /* No border for h3 */
+}
+
+/* Lists */
+.doc-container ul, .doc-container ol {
+    padding-left: 20px;
+}
+
+.doc-container ul li {
+    margin-bottom: 0.5rem;
+}
+.doc-container ol li {
+    margin-bottom: 0.75rem;
+}
+
+/* Code Blocks */
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: var(--pre-bg);
+    color: var(--pre-text);
+    padding: 1.5rem;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0.9em;
+    overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+/* Special Note Block */
+.note {
+    background-color: var(--note-bg);
+    border-left: 5px solid var(--note-border);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.note p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+.doc-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doc-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .doc-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .doc-container h1 {
+        font-size: 2em;
+    }
+
+    .doc-container h2 {
+        font-size: 1.5em;
+    }
+}

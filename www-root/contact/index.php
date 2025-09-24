@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $isValid = false;
     }
 
-    if ($isValid) {
+    /* if ($isValid) {
         try {
             $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
             $dataToInsert = ['name' => $name, 'email' => $email, 'message' => $user_message];
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {
             $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
         }
-    }
+    } */
     if ($isValid) {
     try {
         $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email'   => $email,
             'message' => $user_message
         ];
-        $db->db_Ins('contacts', $dataToInsert);
+        $db->db_In('contacts', $dataToInsert);
         $db->closeConnection();
         $message = '<div class="status-message success">Thank you! Your message has been sent successfully.</div>';
     } catch (Exception $e) {
@@ -93,7 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
 
-    <!-- Use the prefix to find the nav script -->
     <script src="<?= $path_prefix ?>src/nav.js"></script>
 </body>
 </html>

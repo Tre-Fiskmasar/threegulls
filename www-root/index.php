@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 function getJsonData($filePath) {
     if (!file_exists($filePath)) return null;
     $json = file_get_contents($filePath);
@@ -31,7 +34,7 @@ $path_prefix = '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($siteData->Title ?? 'Our Team') ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
 </head>
