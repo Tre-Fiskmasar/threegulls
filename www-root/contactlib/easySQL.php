@@ -2,7 +2,7 @@
 class EasySQL {
     private $conn;
 
-    public function __construct($db_server, $db_user, $db_pass, $db_name, $db_port = 3306) {
+    public function __construct($db_server, $db_user, $db_pass, $db_name, $db_port = 3306) { // port is automagicly set to 3306 if no port is specified
         try {
             $this->conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name, $db_port);
             if (!$this->conn) {

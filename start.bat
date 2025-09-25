@@ -1,3 +1,3 @@
-docker compose down -v
+docker compose down
 docker compose up --build -d
 docker compose ps

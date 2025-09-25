@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS api_keys (
     -- THIS IS THE FIX: user_id can now be NULL, allowing for unassigned keys.
     user_id INT UNSIGNED DEFAULT NULL,
     api_key VARCHAR(255) NOT NULL UNIQUE,
+    -- Add role to key, Admin or user for different uses
     is_active BOOLEAN DEFAULT TRUE,
     requests_count INT DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
