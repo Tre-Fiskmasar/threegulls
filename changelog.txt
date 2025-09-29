@@ -1,0 +1,12 @@
+Author: Hampus/LightningRayquaza 500
+
+LATEST COMMIT:
+
+Date: Monday, 29/09-25
+  -  Added a send-api feature where a users's API keys are automatically sent through the browser if they exist (using axios).
+  -  Updated seagulls.php code & added a fallback if session fails to receive API keys.
+  -  Created another user for myself in JSON.
+  -  Fixed an issue where CSS would not load Poppins font and font weight.
+  -  Changed all mentions of Tre Fiskmåsar to Threegulls
+  -  Added additional CSS in signup.css to match login.css
+    
