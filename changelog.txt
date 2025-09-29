@@ -9,4 +9,6 @@ Date: Monday, 29/09-25
   -  Fixed an issue where CSS would not load Poppins font and font weight.
   -  Changed all mentions of Tre Fiskmåsar to Threegulls
   -  Added additional CSS in signup.css to match login.css
-    
+
+
+
