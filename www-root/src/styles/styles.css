@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #0077b6;
+    --primary-color: #007bff;
     --secondary-color: #00b4d8;
     --text-color: #333;
     --background-color: #f8f9fa;
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     margin: 0;
     padding-top: 70px;
     background: var(--background-color);

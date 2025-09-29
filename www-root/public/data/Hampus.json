@@ -1,0 +1,10 @@
+{
+    "Name": "Hampus Karlström",
+    "image": "Hampus.png",
+    "Description": "Gimme your liver or I'm swatting you",
+    "qualifications": "PHP, JavaScript, Axios, HTML/CSS, Java, Unity, Docker, SQL, HeidiSQL, MariaDB",
+    "Contacts": {
+        "Email": "hampus@trefiskmasar.com",
+        "Number": "(248)434-5508 "
+    }
+}

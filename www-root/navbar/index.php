@@ -2,7 +2,7 @@
     <div class="container top-bar-container">
         <a href="<?= $path_prefix ?>/index.php" class="logo-container">
             <img id="logo" alt="<?= htmlspecialchars($siteData->Title ?? '') ?> Logo" src="<?= $path_prefix ?>../public/img/<?= htmlspecialchars($siteData->logo ?? 'logo.png') ?>">
-            <h1 id="team-title"><?= htmlspecialchars($siteData->Title ?? 'Team Title') ?></h1>
+            <h1 id="team-title"><?= htmlspecialchars($siteData->Title ?? 'Threegulls') ?></h1>
         </a>
         <nav class="main-nav">
             <ul class="nav-links">

@@ -1,3 +1,7 @@
+:root{
+    --primary-color: #007bff;
+}
+
 body {
 display: flex;
 justify-content: center;
@@ -6,7 +10,7 @@ height: 100vh;
 background-color: #f4f4f9;
 }
 .signup-form {
-width: 380px;
+width: 360px;
 padding: 2rem;
 background: #fff;
 border-radius: 8px;
@@ -16,6 +20,19 @@ text-align: center;
 .signup-form h1 {
 color: var(--primary-color);
 margin-bottom: 1.5rem;
+}
+
+.signup-form a {
+ font-weight: 600;
+ text-decoration: none;
+}
+
+.signup-form a:hover{
+  text-decoration: underline;  
+}
+
+.signup-form a:visited{
+    color: var(--primary-color);
 }
 .form-input {
 width: 100%;
@@ -29,6 +46,7 @@ box-sizing: border-box;
 margin-bottom: 1.5rem;
 text-align: left;
 }
+
 .role-selection label {
 margin-right: 1rem;
 }

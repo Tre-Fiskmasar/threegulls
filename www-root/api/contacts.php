@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_log(print_r(getallheaders(), true)); //temporary debug code, can delete
 header("Content-Type: application/json");
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {

@@ -1,14 +1,21 @@
 <?php
 session_start();
+$path_prefix = '../';
+include __DIR__ . '/../navbar/index.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/styles/styles.css">
     <link rel="stylesheet" href="signup.css">
 </head>
+
 <body>
     <div class="signup-form">
         <h1>Create Account</h1>
@@ -39,4 +46,5 @@ session_start();
         <p>Already have an account? <a href="login.php">Login here</a></p>
     </div>
 </body>
+
 </html>

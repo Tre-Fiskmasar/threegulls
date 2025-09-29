@@ -1,13 +1,14 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../contactconfig/database.php'; 
-require_once __DIR__ . '/../contactlib/easySQL.php'; 
+require_once __DIR__ . '/../contactconfig/database.php';
+require_once __DIR__ . '/../contactlib/easySQL.php';
 
 $path_prefix = '../';
 $message = '';
 
-function getJsonData($filePath) {
+function getJsonData($filePath)
+{
     if (!file_exists($filePath)) return null;
     $json = file_get_contents($filePath);
     return json_decode($json);
@@ -41,41 +42,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } */
     if ($isValid) {
-    try {
-        $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-        $dataToInsert = [
-            'name'    => $name,
-            'email'   => $email,
-            'message' => $user_message
-        ];
-        $db->db_In('contacts', $dataToInsert);
-        $db->closeConnection();
-        $message = '<div class="status-message success">Thank you! Your message has been sent successfully.</div>';
-    } catch (Exception $e) {
-        $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
+        try {
+            $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+            $dataToInsert = [
+                'name'    => $name,
+                'email'   => $email,
+                'message' => $user_message
+            ];
+            $db->db_In('contacts', $dataToInsert);
+            $db->closeConnection();
+            $message = '<div class="status-message success">Thank you! Your message has been sent successfully.</div>';
+        } catch (Exception $e) {
+            $message = '<div class="status-message error">An error occurred. Please try again later.</div>';
+        }
     }
-}
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - <?= htmlspecialchars($siteData->Title ?? '') ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
     <link rel="stylesheet" href="contactStyle.css">
 </head>
+
 <body>
-    <?php 
-        include __DIR__ . '/../navbar/index.php'; 
+    <?php
+    include __DIR__ . '/../navbar/index.php';
     ?>
 
     <main class="contact-main">
         <div class="wrapper">
             <h2>Contact Us</h2>
             <p class="form-intro">Have a question? We'd love to hear from you.</p>
-            
+
             <?= $message ?>
 
             <form id="form" action="index.php" method="post">
@@ -95,4 +101,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="<?= $path_prefix ?>src/nav.js"></script>
 </body>
+
 </html>

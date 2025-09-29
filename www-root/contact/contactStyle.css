@@ -2,6 +2,7 @@
 
 /* Use main variables from the global style.css file */
 :root {
+    --primary-color: #007bff;
     --success-color: #28a745;
     --error-color: #dc3545;
     --input-focus-glow: rgba(0, 119, 182, 0.25);

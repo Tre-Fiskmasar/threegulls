@@ -15,7 +15,7 @@ $pendingAdmins = [];
 $messages = [];
 $apiKeys = [];
 $usersWithoutKeys = [];
-$approvedUsersCount = 0; 
+$approvedUsersCount = 0;
 
 try {
     $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
@@ -48,12 +48,17 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <?php include __DIR__ . '/../navbar/index.php'; ?>
 
@@ -98,7 +103,9 @@ try {
                 </thead>
                 <tbody>
                     <?php if (empty($apiKeys)): ?>
-                        <tr><td colspan="5" style="text-align: center;">No API keys have been created yet.</td></tr>
+                        <tr>
+                            <td colspan="5" style="text-align: center;">No API keys have been created yet.</td>
+                        </tr>
                     <?php else: ?>
                         <?php foreach ($apiKeys as $key): ?>
                             <tr>
@@ -116,7 +123,7 @@ try {
             </table>
         </div>
     </section>
-    
+
     <section class="admin-section">
         <h2>Pending Admin Approvals</h2>
         <?php if (empty($pendingAdmins)): ?>
@@ -201,4 +208,5 @@ try {
 
     <script src="<?= $path_prefix ?>src/nav.js"></script>
 </body>
+
 </html>

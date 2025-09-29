@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['api_key_manual'])) {
     $submittedKey = trim($_POST['api_key_manual']);
     try {
         $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-        
+
         $keyData = $db->db_Out('api_keys', 'id', 'api_key = ? AND user_id IS NULL', [$submittedKey]);
-        
+
         if ($keyData) {
             $db->db_Set('api_keys', ['user_id' => $_SESSION['user_id']], 'id = ?', [$keyData[0]['id']]);
             header('Location: index.php');
@@ -36,14 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['api_key_manual'])) {
 
 try {
     $db = new EasySQL(DB_SERVER, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-    
+
     $keyData = $db->db_Out('api_keys', 'api_key', 'user_id = ?', [$_SESSION['user_id']]);
-    
+
     if ($keyData) {
         $apiKey = $keyData[0]['api_key'];
         $seagulls = $db->db_Out('seagulls', 'species_name, description, habitat, image_url');
     }
-    
+
     $db->closeConnection();
 } catch (Exception $e) {
     error_log($e->getMessage());
@@ -51,21 +51,26 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= $path_prefix ?>src/styles/styles.css">
     <link rel="stylesheet" href="user.css">
 </head>
+
 <body>
     <?php include __DIR__ . '/../navbar/index.php'; ?>
 
     <div class="user-container">
         <h1>Welcome, <?= htmlspecialchars($_SESSION['username']) ?>!</h1>
-        
+
         <div class="api-key-section">
             <h2>Your API Key</h2>
-            
+
             <?php if ($apiKey): ?>
                 <p>Use the key below to access the Seagull API.</p>
                 <code class="api-key-display"><?= htmlspecialchars($apiKey) ?></code>
@@ -80,7 +85,7 @@ try {
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-        
+
         <a href="<?= $path_prefix ?>auth/logout.php" class="logout-button">Logout</a>
     </div>
 
@@ -103,7 +108,12 @@ try {
     <?php endif; ?>
 
     <script src="<?= $path_prefix ?>src/nav.js"></script>
-    <script src="./node_modules/axios/dist/axios_min.js"> </script>
-    <script src="send-api.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        const apiKey = "<?= htmlspecialchars($apiKey) ?>"
+    </script>
+    <script src="./send-api.js"></script>
 </body>
+
 </html>

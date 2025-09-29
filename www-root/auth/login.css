@@ -14,7 +14,6 @@ body {
     height: 100vh;
     background-color: var(--page-bg);
     margin: 0;
-    font-family: sans-serif;
 }
 
 .login-form {
