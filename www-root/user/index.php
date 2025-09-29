@@ -103,5 +103,7 @@ try {
     <?php endif; ?>
 
     <script src="<?= $path_prefix ?>src/nav.js"></script>
+    <script src="./node_modules/axios/dist/axios_min.js"> </script>
+    <script src="send-api.js"> </script>
 </body>
 </html>
